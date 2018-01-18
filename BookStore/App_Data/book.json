@@ -1,0 +1,24 @@
+﻿[
+  {
+    "Cover": "sdsd",
+    "Title": "Lord Of The Rings",
+    "Author": "J. R. R. Tolkien",
+    "Format": "paper",
+    "Status": "in progress",
+    "Owned": "yes",
+    "Store": "- - -",
+    "Id": "2"
+    
+
+  },
+  {
+    "Cover": "sdsd",
+    "Title": "The God Father",
+    "Author": "Mario Puzo",
+    "Format": "paper",
+    "Status": "done",
+    "Owned": "yes",
+    "Store": "- - -",
+    "Id": "4"
+  }
+]
