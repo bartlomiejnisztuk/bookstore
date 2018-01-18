@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Books management</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bookStoreCommon.css" rel="stylesheet" />
+    <link href="Content/angular-material.css" rel="stylesheet" />
+</head>
+<body ng-app="booksManagement">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">Books management</div>
+            <div class="navbar-brand">About</div>
+        </div>
+    </div>
+</nav>
+
+<a href="/">List</a>
+<a href="#!editBook">Book</a>
+
+<div ng-view></div>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+<script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-aria.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
+    <script src="Scripts/angular-material.js"></script>
+<script src="Scripts/angular-route.js"></script>
+<script src="app/app.js"></script>
+<script src="app/books/booksListCtrl.js"></script>
+<script src="app/books/bookEditCtrl.js"></script>
+<script src="Scripts/angular-resource.js"></script>
+<script src="common/common.services.js"></script>
+<script src="common/bookResource.js"></script>
+</body>
+</html>

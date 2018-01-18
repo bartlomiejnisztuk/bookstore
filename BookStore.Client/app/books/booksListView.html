@@ -1,0 +1,33 @@
+﻿<div class="container">
+    <div class="panel panel-primary" ng-controller="BooksListCtrl as vm">
+        <div class="panel-heading">
+            Books List
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <td>Cover</td>
+                        <td>Title</td>
+                        <td>Author</td>
+                        <td>Format</td>
+                        <td>Reading Status</td>
+                        <td>Owned</td>
+                        <td>Store</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-click="vm.bookClicked(book)" ng-repeat="book in vm.books">
+                        <td>{{book.cover}}</td>
+                        <td>{{book.title}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.format}}</td>
+                        <td>{{book.status}}</td>
+                        <td>{{book.owned}}</td>
+                        <td>{{book.store}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

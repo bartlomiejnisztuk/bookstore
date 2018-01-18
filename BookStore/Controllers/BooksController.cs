@@ -11,7 +11,7 @@ using BookStore.Models;
 
 namespace BookStore.Controllers
 {
-    [EnableCors("http://localhost:63608","*","*")]
+    [EnableCors("http://localhost:49539", "*","*")]
     public class BooksController : ApiController
     {
         // GET: api/Books

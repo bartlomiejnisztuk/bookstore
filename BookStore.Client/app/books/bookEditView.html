@@ -1,0 +1,144 @@
+﻿<form class="form-horizontal"
+      name="productForm"
+      novalidate
+      ng-controller="BookEditCtrl as vm">
+    <fieldset>
+        <legend>Basic Book Information</legend>
+        <div class="form-group"
+             ng-class="{'has-error':bookForm.inputBookName.$invalid &&
+                                    bookForm.inputBookName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputBookName">Title</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputBookName"
+                       name="inputBookName"
+                       type="text"
+                       placeholder="Book Name (required)"
+                       ng-model="vm.book.title"
+                       required
+                       ng-minlength="2"
+                       ng-maxlength="120" />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="bookForm.inputBookName.$error.required">
+                    Book name is required.
+                </span>
+                <span ng-show="bookForm.inputBookName.$error.minlength">
+                    Book name must be at least 2 characters in length.
+                </span>
+                <span ng-show="bookForm.inputBookName.$error.maxlength">
+                    Book name cannot exceed 120 characters in length.
+                </span>
+            </span>
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error':bookForm.inputBookAuthor.$invalid &&
+                                    bookForm.inputBookAuthor.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputBookName">Author</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputBookAuthor"
+                       name="inputBookAuthor"
+                       type="text"
+                       placeholder="Author (required)"
+                       ng-model="vm.book.author"
+                       required
+                       ng-minlength="2"
+                       ng-maxlength="120" />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="bookForm.inputBookAuthor.$error.required">
+                    Book author is required.
+                </span>
+                <span ng-show="bookForm.inputBookAuthor.$error.minlength">
+                    Author name must be at least 2 characters in length.
+                </span>
+                <span ng-show="bookForm.inputBookAuthor.$error.maxlength">
+                    Author cannot exceed 120 characters in length.
+                </span>
+            </span>
+        </div>
+
+        <!--<div class="form-group"
+                 ng-class="{'has-error':productForm.inputProductCode.$invalid &&
+                                    productForm.inputProductCode.$dirty}">
+            <label class="col-md-2 control-label" for="inputProductCode">Product Code</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputProductCode"
+                       name="inputProductCode"
+                       type="text"
+                       placeholder="Product Code (required)"
+                       ng-model="vm.product.productCode"
+                       required>
+            </div>
+            <span class="help-block has-error"
+                  ng-show="productForm.inputProductCode.$invalid ">
+                Product Code is required
+            </span>
+        </div>-->
+
+        <!--<div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputAvailabilityDate">Availability</label>
+
+            <div class="col-md-4">
+                <div class="form-control">
+                    {{vm.product.releaseDate|date }}
+                </div>
+            </div>
+        </div>-->
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputDescription">Format</label>
+
+            <div class="col-md-10">
+                <md-input-container style="margin-right: 10px;">
+                    <label>Size</label>
+                    <md-select ng-model="size">
+                        <md-option ng-repeat="format in formats" value="{{format}}">{{format.name}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <br />
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            style="width:80px;margin-right:10px"
+                            ng-click="vm.submit()"
+                            ng-disabled="bookForm.$invalid">
+                        Save
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            style="width:70px"
+                            ng-click="vm.cancel(productForm)">
+                        Cancel
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group"
+             ng-show="vm.message">
+            <div class="col-md-6">
+                <pre style="font: inherit">{{vm.message }}</pre>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+<script>
+    $('.dropdown-toggle').dropdown()
+</script>
